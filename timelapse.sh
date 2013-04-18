@@ -141,7 +141,8 @@ Encode ()
 
 	#mencoder -ovc x264 -oac mp3lame -audiofile "" -mf w=1366:h=768:fps=$FPS:type=jpg 'mf://@files.txt' -o ~/Screencast/$DATE.avi
 	#ffmpeg -r 10 -i %d.jpg -b 15000k ~/Screencast/$DATE.mov
-	exit 0;
+    notify-send -t 10 -i video -a Time-Lapse.sh "Finished Timelapse" "$FILE"    
+    exit 0;
 }
 
 
