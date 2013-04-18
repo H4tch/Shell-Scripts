@@ -13,7 +13,7 @@ CheckDep()
 {
 	`$1 &> /dev/null`
 	if (test $? -eq 127) then
-		echo "Installing $1..."
+		echo "Need to install $1."
 		sudo apt-get install $1 -y
 	fi
 }
@@ -21,12 +21,14 @@ CheckDep()
 
 Kill () {
 	killall $0
+    killall timelapse.sh
 	exit 0;
 }
 
 Killall () {
 	killall mencoder
 	killall $0
+    killall timelapse.sh
 	exit 0;
 }
 
@@ -172,7 +174,8 @@ while (test $SHIFT_COUNT -le $ARGS)
 do
 	case  $1  in
 			"timelapse")Timelapse;;
-			"encode")	Export;;
+			"encode")	Encode;;
+			"export")	Encode;;
 			"kill")		Kill;;
 			"killall")	Killall;;
 			"help")		Help;;
