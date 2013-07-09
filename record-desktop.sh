@@ -11,8 +11,8 @@ if (test $? -gt 2) then
 fi
 
 OUTRES="1280x720"
-FPS="8"
-QUAL=11 #number 1 - 31, lower the more quality
+FPS="25"
+QUAL=8 #number 1 - 31, lower the more quality
 
 #DATE=`date +%Y%m%d`
 DATE=`date +%F_%I:%M:%S`

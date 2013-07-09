@@ -11,7 +11,7 @@
 # Helper function to Check for and Install the dep.
 CheckDep()
 {
-	`$1 &> /dev/null`
+	`ls /usr/bin/$1 &> /dev/null`
 	if (test $? -eq 127) then
 		echo "Need to install $1."
 		sudo apt-get install $1 -y
@@ -49,7 +49,7 @@ SnapShot ()
 
 Timelapse ()
 {
-	CheckDep scrot
+	CheckDep "scrot"
 
 	DATE=`date +%F`
 	TIME=`date +%I:%M`
@@ -80,7 +80,7 @@ Timelapse ()
 	# Infinite Loop
 	while [ 1 ];
 	   	do SnapShot "$DIR"
-		sleep 1;
+		sleep 10;
 	done
 }
 
@@ -88,7 +88,7 @@ Timelapse ()
 
 Encode ()
 {
-	CheckDep mencoder
+	CheckDep "mencoder"
 
 	FPS="20"
 	#QUAL=11
