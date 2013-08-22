@@ -12,16 +12,17 @@ fi
 
 OUTRES="1280x720"
 FPS="25"
-QUAL=8 #number 1 - 31, lower the more quality
+QUAL=6 #number 1 - 31, lower the more quality
 
 #DATE=`date +%Y%m%d`
 DATE=`date +%F_%I:%M:%S`
 
 avconv \
-	-f x11grab -show_region 1 -s $INRES -video_size $OUTRES -framerate $FPS -i :0.0+$TOPXY \
+	-f pulse -ac 2 -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor -acodec mp3 \
+	-f x11grab -s $INRES -video_size $OUTRES -r $FPS -i :0.0 \
 	-threads 2 -q $QUAL \
-	-vcodec flv -s $OUTRES -bt 400 -b 1200 \
-	-f flv $DATE".flv"
+	-vcodec flv -s $OUTRES -ar 11025 -bt 11025 -b 11025 \
+	$DATE".flv"
 
 #	-f alsa -ac 2 -i pulse \
 

@@ -71,16 +71,16 @@ Timelapse ()
 	# (noate Ubuntu forcefully shows notifications for 10 seconds.)
 	notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
 	notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
-	notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
-	notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
-	notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
-	notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
+	#notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
+	#notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
+	#notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
+	#notify-send -t 10 -i calendar -a Time-Lapse.sh "$(date '+%B %m %Y')" "$(date '+%X')"
 
 	frame="01"
 	# Infinite Loop
 	while [ 1 ];
 	   	do SnapShot "$DIR"
-		sleep 10;
+		sleep 2;
 	done
 }
 
