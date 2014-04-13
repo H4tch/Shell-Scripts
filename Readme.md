@@ -12,5 +12,7 @@ enough to read text.
 Records your desktop and streams it to your TwitchTv channel. This relies on
 your twitch key to be stored at ~/.ssh/twitch_key.
 
-
+#### WishList
+This is a C++ script that checks a list of Amazon items and notifies you if
+the price falls below your desired price.
 

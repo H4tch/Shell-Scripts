@@ -80,7 +80,7 @@ Timelapse ()
 	# Infinite Loop
 	while [ 1 ];
 	   	do SnapShot "$DIR"
-		sleep 2;
+		sleep 2; # Seconds between shots.
 	done
 }
 
